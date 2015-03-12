@@ -1,18 +1,6 @@
-module MicroEvent
-  VERSION = "1.0.2".freeze
-
-  def bind(event, &fn)
-    @_ ||= Hash.new{ |h,k| h[k] = [] }
-    fn ? @_[event] << fn : raise(ArgumentError, "no block given")
-  end
-
-  def unbind(event, &fn)
-    @_ ||= Hash.new{ |h,k| h[k] = [] }
-    fn ? @_[event].delete(fn) : @_.delete(event) || []
-  end
-
-  def trigger(event, *args)
-    @_ ||= Hash.new{ |h,k| h[k] = [] }
-    !@_[event].dup.each{ |fn| instance_exec(*args, &fn) }.empty?
-  end
-end
+eval"module MicroEvent;VERSION='1.0.2'.freeze
+def trigger(e,*#{y="f)@_||=Hash.new{|h,k|h[k]=[]}
+"}!@_[e].dup.map{|g|instance_exec *f,&g}.empty?end
+def #{x="bind(e,&#{y}f ?@_[e]"}<<f :raise(ArgumentError,'no block given')end
+def un#{x}.delete(f):@_.delete(e)||[]end
+end"
