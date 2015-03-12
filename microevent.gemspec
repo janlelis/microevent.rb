@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-require File.expand_path('../lib/microevent', __FILE__)
+require_relative 'lib/microevent'
 
 Gem::Specification.new do |gem|
   gem.name          = "microevent"

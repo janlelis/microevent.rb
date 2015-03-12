@@ -1,5 +1,5 @@
 module MicroEvent
-  VERSION = "1.0.0".freeze
+  VERSION = "1.0.1".freeze
 
   def bind(event, &fn)
     @_ ||= Hash.new{ |h,k| h[k] = [] }
