@@ -1,5 +1,5 @@
 module MicroEvent
-  VERSION = "1.0.1".freeze
+  VERSION = "1.0.2".freeze
 
   def bind(event, &fn)
     @_ ||= Hash.new{ |h,k| h[k] = [] }
@@ -13,6 +13,6 @@ module MicroEvent
 
   def trigger(event, *args)
     @_ ||= Hash.new{ |h,k| h[k] = [] }
-    !@_[event].each{ |fn| instance_exec(*args, &fn) }.empty?
+    !@_[event].dup.each{ |fn| instance_exec(*args, &fn) }.empty?
   end
 end

@@ -215,4 +215,27 @@ describe MicroEvent do
       assert_equal false, result
     end
   end
+
+  describe "thread safety" do
+    it "is thread safe when unbinding while triggering" do
+      mutex = Mutex.new
+      result = []
+
+      procs = (0...5000).map {
+        proc{ mutex.synchronize{ result << 42 } }
+      }
+      procs.each{ |proc|
+        object.bind :slot, &proc
+      }
+      thread = Thread.new do
+        procs.each{ |proc|
+          object.unbind :slot, &proc
+        }
+      end
+      object.trigger :slot
+      thread.join
+
+      assert_equal 5000, result.size
+    end
+  end
 end
