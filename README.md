@@ -46,7 +46,7 @@ end
 Klass.trigger :slot # => Go
 ```
 
-You will find more examples in the [tests](https://github.com/janlelis/microevent.rb/blob/master/spec/microevent_test.rb).
+You will find more examples in the [tests](https://github.com/janlelis/microevent.rb/blob/master/spec/microevent_spec.rb).
 
 ## Projects Using MicroEvent.rb
 
