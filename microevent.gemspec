@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.name          = "microevent"
   gem.version       = MicroEvent::VERSION
   gem.summary       = 'MicroEvent.rb is a event emitter library which provides the observer pattern to Ruby objects.'
-  gem.description   = 'MicroEvent.rb is a event emitter library which provides the observer pattern to Ruby objects. It is inspired by[MicroEvent.js and implemented in less than 20 lines of Ruby.'
+  gem.description   = 'MicroEvent.rb is a event emitter library which provides the observer pattern to Ruby objects. It is inspired by MicroEvent.js and implemented in less than 20 lines of Ruby.'
   gem.license       = "MIT"
   gem.authors       = ["Jan Lelis"]
   gem.email         = "mail@janlelis.de"
