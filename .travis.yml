@@ -1,6 +1,6 @@
 language: ruby
 
-script: ruby spec/*
+script: bundle exec ruby spec/*
 
 rvm:
 - 2.2.1

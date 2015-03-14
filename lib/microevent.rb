@@ -1,8 +1,18 @@
+require 'thread_safe'
+
 module MicroEvent
   VERSION = "1.1.0".freeze
 
+  @mutex = Mutex.new
+
+  class << self
+    attr_reader :mutex
+  end
+
   def bind(event, &fn)
-    @_ ||= Hash.new{ |h,k| h[k] = [] }
+    MicroEvent.mutex.synchronize{
+      @_ ||= ThreadSafe::Hash.new{ |h,k| h[k] = ThreadSafe::Array.new }
+    } unless @_
     fn ? @_[event] << fn : raise(ArgumentError, "no block given")
   end
 

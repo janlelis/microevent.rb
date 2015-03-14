@@ -253,5 +253,42 @@ describe MicroEvent do
 
       assert_equal 5000, result.size
     end
+
+    it "is thread safe when binding a lot at once" do
+      object
+      mutex = Mutex.new
+      threads = []
+
+      (0...10_000).each{
+        threads << Thread.new do
+          object.bind :slot, &proc{}
+        end
+      }
+      threads.map(&:join)
+      result = object.unbind(:slot).dup
+
+      assert_equal 10_000, result.size
+    end
+
+    it "is thread safe when unbinding a lot at once" do
+      object
+      mutex = Mutex.new
+      threads = []
+
+      procs = (0...1_000).map{
+        prok = proc{}
+        object.bind :slot, &prok
+        prok
+      }
+      procs.each{ |prok|
+        threads << Thread.new do
+          object.unbind :slot, &prok
+        end
+      }
+      threads.map(&:join)
+      result = object.unbind(:slot).dup
+
+      assert_equal 0, result.size
+    end
   end
 end

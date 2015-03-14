@@ -8,10 +8,9 @@ MicroEvent.rb is a event emitter library which provides the observer pattern to 
 Add to your `Gemfile`
 
 ```ruby
-gem 'microevent'
+gem 'microevent', github: 'janlelis/microevent.rb', branch: 'threadsafe'
 ```
 
-or copy the [source file](https://github.com/janlelis/microevent.rb/blob/master/lib/microevent.rb) into your project.
 
 ## How to Use It
 
