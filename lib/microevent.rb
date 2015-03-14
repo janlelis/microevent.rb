@@ -7,12 +7,10 @@ module MicroEvent
   end
 
   def unbind(event, &fn)
-    @_ ||= Hash.new{ |h,k| h[k] = [] }
-    fn ? @_[event].delete(fn) : @_.delete(event) || []
+    fn ? @_ && @_[event].delete(fn) : @_ && @_.delete(event) || []
   end
 
   def trigger(event, *args)
-    @_ ||= Hash.new{ |h,k| h[k] = [] }
-    !@_[event].dup.each{ |fn| instance_exec(*args, &fn) }.empty?
+    !!@_ && !@_[event].dup.each{ |fn| instance_exec(*args, &fn) }.empty?
   end
 end

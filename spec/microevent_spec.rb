@@ -139,14 +139,6 @@ describe MicroEvent do
       assert_equal [23], result
     end
 
-    it "will do nothing if there is nothing to remove" do
-      result = []
-
-      object.unbind :slot
-
-      assert_equal [], result
-    end
-
     it "returns deleted callbacks" do
       fn = proc{}
       object.bind :slot, &fn
@@ -156,6 +148,14 @@ describe MicroEvent do
     end
 
     it "will return nil if nothing is removed" do
+      fn = proc{}
+      object.bind :another_slot, &fn
+      result = object.unbind :slot, &fn
+
+      assert_equal nil, result
+    end
+
+    it "will return nil if no callback is registered at all" do
       fn = proc{}
       result = object.unbind :slot, &fn
 
@@ -186,6 +186,14 @@ describe MicroEvent do
     end
 
     it 'will return emtpy array if no block is given and no callback deleted' do
+      fn = proc{}
+      object.bind :another_slot, &fn
+      result = object.unbind :slot
+
+      assert_equal [], result
+    end
+
+    it 'will return emtpy array if no block is given and no callback is registered at all' do
       result = object.unbind :slot
 
       assert_equal [], result
@@ -210,6 +218,14 @@ describe MicroEvent do
     end
 
     it "will return false if there is no callback listening" do
+      fn = proc{}
+      object.bind :other_slot, &fn
+      result = object.trigger :slot
+
+      assert_equal false, result
+    end
+
+    it "will return false if there is no callback at all registered" do
       result = object.trigger :slot
 
       assert_equal false, result
