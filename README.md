@@ -48,6 +48,12 @@ Klass.trigger :slot # => Go
 
 You will find more examples in the [tests](https://github.com/janlelis/microevent.rb/blob/master/spec/microevent_spec.rb).
 
+## Alternative Versions
+
+* [threadsafe](https://github.com/janlelis/microevent.rb/tree/threadsafe)
+* [min](https://github.com/janlelis/microevent.rb/tree/min)
+
+
 ## Projects Using MicroEvent.rb
 
 * [micrologger](https://github.com/janlelis/micrologger)
