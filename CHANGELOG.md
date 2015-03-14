@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-### 1.1.0 (master)
+### 1.1.0
 
 * Only check if event store hash should be created on #bind, not on #unbind and #trigger
 
