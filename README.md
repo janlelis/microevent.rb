@@ -50,8 +50,9 @@ You will find more examples in the [tests](https://github.com/janlelis/microeven
 
 ## Alternative Versions
 
-* [threadsafe](https://github.com/janlelis/microevent.rb/tree/threadsafe)
-* [min](https://github.com/janlelis/microevent.rb/tree/min)
+* [threadsafe](https://github.com/janlelis/microevent.rb/tree/threadsafe) - Thread safe version?
+* [added](https://github.com/janlelis/microevent.rb/tree/added) - Thread safe version? Based on [added](https://github.com/janlelis/added) hook
+* [min](https://github.com/janlelis/microevent.rb/tree/min) - 275 bytes version
 
 
 ## Projects Using MicroEvent.rb
