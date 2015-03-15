@@ -18,4 +18,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_dependency 'thread_safe', '~> 0.3.5'
+  gem.add_dependency 'added', '~> 1.0.1'
 end

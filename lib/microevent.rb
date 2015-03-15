@@ -1,26 +1,22 @@
 require_relative 'microevent/version'
 
 require 'thread_safe'
+require 'added'
 
 module MicroEvent
-  @mutex = Mutex.new
-
-  class << self
-    attr_reader :mutex
+  def self.added(instance)
+    instance.instance_variable_set :@_, ThreadSafe::Hash.new{ |h,k| h[k] = ThreadSafe::Array.new }
   end
 
   def bind(event, &fn)
-    MicroEvent.mutex.synchronize{
-      @_ ||= ThreadSafe::Hash.new{ |h,k| h[k] = ThreadSafe::Array.new }
-    } unless @_
     fn ? @_[event] << fn : raise(ArgumentError, "no block given")
   end
 
   def unbind(event, &fn)
-    fn ? @_ && @_[event].delete(fn) : @_ && @_.delete(event) || []
+    fn ? @_[event].delete(fn) : @_.delete(event) || []
   end
 
   def trigger(event, *args)
-    !!@_ && !@_[event].dup.each{ |fn| instance_exec(*args, &fn) }.empty?
+    !@_[event].dup.each{ |fn| instance_exec(*args, &fn) }.empty?
   end
 end
