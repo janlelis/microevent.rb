@@ -1,8 +1,8 @@
+require_relative 'microevent/version'
+
 require 'thread_safe'
 
 module MicroEvent
-  VERSION = "1.1.0".freeze
-
   @mutex = Mutex.new
 
   class << self
