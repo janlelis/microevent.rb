@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 1.1.1 (unreleased)
+
+- 2022 re-release: Update Gemspec and CI
+
 ### 1.1.0
 
 * Only check if event store hash should be created on #bind, not on #unbind and #trigger

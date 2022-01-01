@@ -1,4 +1,4 @@
-# MicroEvent.rb [![[version]](https://badge.fury.io/rb/microevent.svg)](http://badge.fury.io/rb/microevent)  [![[travis]](https://travis-ci.org/janlelis/microevent.rb.png)](https://travis-ci.org/janlelis/microevent.rb)
+# MicroEvent.rb [![[version]](https://badge.fury.io/rb/microevent.svg)](https://badge.fury.io/rb/microevent)  [![[CI]](https://github.com/janlelis/paint/workflows/Test/badge.svg)](https://github.com/janlelis/paint/actions?query=workflow%3ATest)
 
 MicroEvent.rb is a event emitter library which provides the observer pattern to Ruby objects. It is inspired by [MicroEvent.js](https://github.com/jeromeetienne/microevent.js), implemented in less than [20 lines of Ruby](https://github.com/janlelis/microevent.rb/blob/master/lib/microevent.rb).
 
@@ -48,10 +48,10 @@ Klass.trigger :slot # => Go
 
 You will find more examples in the [tests](https://github.com/janlelis/microevent.rb/blob/master/spec/microevent_spec.rb).
 
-## Alternative Versions
+## Alternative Variants
 
-* [threadsafe](https://github.com/janlelis/microevent.rb/tree/threadsafe) - Thread safe version?
-* [added](https://github.com/janlelis/microevent.rb/tree/added) - Thread safe version? Based on [added](https://github.com/janlelis/added) hook
+* [threadsafe](https://github.com/janlelis/microevent.rb/tree/threadsafe) - Thread safe version
+* [added](https://github.com/janlelis/microevent.rb/tree/added) - Thread safe version based on [added](https://github.com/janlelis/added) hook
 * [min](https://github.com/janlelis/microevent.rb/tree/min) - 275 bytes version
 
 
@@ -62,4 +62,4 @@ You will find more examples in the [tests](https://github.com/janlelis/microeven
 
 ## MIT License
 
-Ruby version by [Jan Lelis](http://janlelis.com). Inspired by [MicroEvent.js](https://github.com/jeromeetienne/microevent.js) by Jerome Etienne.
+Ruby version by [Jan Lelis](https://janlelis.com). Inspired by [MicroEvent.js](https://github.com/jeromeetienne/microevent.js) by Jerome Etienne.
