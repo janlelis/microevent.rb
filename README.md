@@ -1,4 +1,4 @@
-# MicroEvent.rb [![[version]](https://badge.fury.io/rb/microevent.svg)](https://badge.fury.io/rb/microevent)  [![[CI]](https://github.com/janlelis/paint/workflows/Test/badge.svg)](https://github.com/janlelis/paint/actions?query=workflow%3ATest)
+# MicroEvent.rb [![[version]](https://badge.fury.io/rb/microevent.svg)](https://badge.fury.io/rb/microevent)  [![[CI]](https://github.com/janlelis/microevent.rb/workflows/Test/badge.svg)](https://github.com/janlelis/microevent.rb/actions?query=workflow%3ATest)
 
 MicroEvent.rb is a event emitter library which provides the observer pattern to Ruby objects. It is inspired by [MicroEvent.js](https://github.com/jeromeetienne/microevent.js), implemented in less than [20 lines of Ruby](https://github.com/janlelis/microevent.rb/blob/master/lib/microevent.rb).
 

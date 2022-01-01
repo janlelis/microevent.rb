@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-### 1.1.1 (unreleased)
+### 1.1.1
 
 - 2022 re-release: Update Gemspec and CI
 
